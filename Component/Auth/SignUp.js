@@ -1,8 +1,5 @@
 //Icons
 import React, { useState } from "react";
-import Icon from "react-native-vector-icons/Ionicons";
-import IconLock from "react-native-vector-icons/Feather";
-
 // react native import
 import {
   StyleSheet,
@@ -19,20 +16,19 @@ import { observer } from "mobx-react-lite";
 import authStore from "../../Stores/authStore";
 
 const { width: WIDTH } = Dimensions.get("window");
-const SignIn = () => {
+const signUp = () => {
   const [user, setUser] = useState({
-    email: "",
     password: "",
+    firstname: "",
+    lastname: "",
+    email: "",
   });
+
   const handlesubmit = () => {
-    console.log(user);
-    authStore.signIn(user);
+    authStore.signUp(user);
     // \\call sign in functioon from auth store
   };
-  let eyeCon = true;
-  const handleEye = () => {
-    eyeCon = eyeCon ? false : true;
-  };
+
   return (
     <ImageBackground
       source={{
@@ -48,52 +44,48 @@ const SignIn = () => {
           style={styles.logo}
         />
       </View>
+
       <View style={styles.logoContainer}>
-        <Icon
-          style={styles.inputIcon}
-          name={"ios-person-outline"}
-          size={28}
-          color={"black"}
-        />
         <TextInput
           style={styles.input}
-          placeholder={"Email"}
+          placeholder={"firstname"}
+          onChangeText={(value) => setUser({ ...user, firstname: value })}
+          underlineColorAndroid={"transparent"}
+        />
+      </View>
+      <View style={styles.logoContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder={"last name"}
+          onChangeText={(value) => setUser({ ...user, lastname: value })}
+          underlineColorAndroid={"transparent"}
+        />
+      </View>
+      <View style={styles.logoContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder={"email"}
           onChangeText={(value) => setUser({ ...user, email: value })}
           underlineColorAndroid={"transparent"}
         />
       </View>
       <View>
-        <TouchableOpacity>
-          <IconLock
-            onPress={handlesubmit}
-            style={styles.inputIcon}
-            name={"lock"}
-            size={28}
-            color={"black"}
-          />
-        </TouchableOpacity>
-
         <TextInput
           style={styles.input}
           placeholder={"Password"}
           onChangeText={(value) => setUser({ ...user, password: value })}
-          secureTextEntry={eyeCon}
           underlineColorAndroid={"transparent"}
         />
-
-        <TouchableOpacity style={styles.btnEye} onPress={handleEye}>
-          <Icon name={"ios-eye-outline"} size={26} color={"black"} />
-        </TouchableOpacity>
       </View>
+
       <TouchableOpacity onPress={handlesubmit} style={styles.btnLogin}>
-        <Text style={styles.text}>Login</Text>
+        <Text style={styles.text}>Register</Text>
       </TouchableOpacity>
     </ImageBackground>
   );
 };
 
-export default observer(SignIn);
-
+export default observer(signUp);
 const styles = StyleSheet.create({
   backgroundContainer: {
     width: "100%",
