@@ -8,6 +8,9 @@ export default function App() {
     <NativeBaseProvider>
       <CreateEventaModal />
       <NavigationContainer>{/* <StackNavigation /> */}</NavigationContainer>
+      <NavigationContainer>
+        <StackNavigation />
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
