@@ -101,11 +101,11 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     bottom: 30,
-    borderRadius: "50%",
+    borderRadius: 250,
   },
   logoText: {
     color: "black",
-    fontWeight: 700,
+    fontWeight: "700",
     fontSize: 40,
 
     opacity: 0.5,
@@ -117,13 +117,13 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderWidth: 1,
     fontSize: 20,
-    fontWeight: 550,
+    fontWeight: "500",
     paddingLeft: 45,
     backgroundColor: "white",
     color: "black",
     marginHorizontal: 25,
     shadowColor: "#000000",
-    shadowOpacity: 0.8,
+    shadowOpacity: 0.5,
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
@@ -148,11 +148,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#016afb",
     justifyContent: "center",
     marginTop: 20,
+    top: 50,
     opacity: 0.8,
   },
   text: {
     color: "white",
     fontSize: 20,
     textAlign: "center",
+  },
+  orText: {
+    top: 50,
   },
 });
