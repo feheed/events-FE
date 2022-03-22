@@ -17,7 +17,7 @@ import {
 
 import { observer } from "mobx-react-lite";
 import authStore from "../../Stores/authStore";
-
+import { useNavigation } from "@react-navigation/native";
 const { width: WIDTH } = Dimensions.get("window");
 const SignIn = () => {
   const [user, setUser] = useState({
@@ -33,6 +33,7 @@ const SignIn = () => {
   const handleEye = () => {
     eyeCon = eyeCon ? false : true;
   };
+  const navigation = useNavigation();
   return (
     <ImageBackground
       source={{
@@ -49,12 +50,12 @@ const SignIn = () => {
         />
       </View>
       <View style={styles.logoContainer}>
-        <Icon
+        {/* <Icon
           style={styles.inputIcon}
           name={"ios-person-outline"}
           size={28}
           color={"black"}
-        />
+        /> */}
         <TextInput
           style={styles.input}
           placeholder={"Email"}
@@ -63,7 +64,7 @@ const SignIn = () => {
         />
       </View>
       <View style={styles.logoContainer}>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <IconLock
             onPress={handlesubmit}
             style={styles.inputIcon}
@@ -71,7 +72,7 @@ const SignIn = () => {
             size={28}
             color={"black"}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         <TextInput
           style={styles.input}
@@ -91,7 +92,7 @@ const SignIn = () => {
       </TouchableOpacity>
 
       <Text style={styles.orText}>OR</Text>
-      <TouchableOpacity onPress={handlesubmit}>
+      <TouchableOpacity onPress={() => navigation.navigate("signup")}>
         <Text style={styles.changeAuth}>SignUp</Text>
       </TouchableOpacity>
     </ImageBackground>

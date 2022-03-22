@@ -8,7 +8,7 @@ const MyEvent = () => {
   const HandleJoinedEvent = () => {
     !event ? 1 : false;
   };
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View>
