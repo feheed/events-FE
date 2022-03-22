@@ -8,7 +8,7 @@ import MyEvent from "../Event/MyEvent";
 const StackNavigation = () => {
   const { Navigator, Screen } = createStackNavigator();
   return (
-    <Navigator initialRouteName="signin">
+    <Navigator initialRouteName="myevent">
       <Screen name="signup" component={SignUp} />
       <Screen name="signin" component={SignIn} />
       <Screen name="myevent" component={MyEvent} />

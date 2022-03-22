@@ -2,6 +2,7 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 import { Button } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 
 const MyEvent = () => {
   let event = false;
@@ -13,12 +14,12 @@ const MyEvent = () => {
     <View style={styles.container}>
       <View>
         <Button size="sm" variant="ghost" colorScheme="secondary">
-          SECONDARY
+          My Events
         </Button>
       </View>
       <View>
         <Button size="sm" variant="ghost" colorScheme="secondary">
-          SECONDARY
+          Joined Events
         </Button>
       </View>
     </View>
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
   },
   buttonContainer: {
     flex: 1,
