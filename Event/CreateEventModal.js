@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
-
 import {
   Box,
   Heading,
@@ -10,6 +9,8 @@ import {
   Button,
   Input,
 } from "native-base";
+import DTP from "./DTP";
+import TMP from "./TMP";
 
 export default function CreateEventaModal({ navigation }) {
   const [event, setEvent] = useState({
@@ -88,17 +89,7 @@ export default function CreateEventaModal({ navigation }) {
               onChangeText={(value) => setEvent({ ...event, image: value })}
             />
           </FormControl>
-          <FormControl>
-            <Input
-              borderWidth={3}
-              height={50}
-              borderColor="#35589A"
-              backgroundColor="#ffff"
-              placeholder="Date"
-              style={styles.input}
-              onChangeText={(value) => setEvent({ ...event, date: value })}
-            />
-          </FormControl>
+
           <FormControl>
             <Input
               borderWidth={3}
@@ -149,6 +140,8 @@ export default function CreateEventaModal({ navigation }) {
               onChangeText={(value) => setEvent({ ...event, mobile: value })}
             />
           </FormControl>
+          <DTP />
+          <TMP />
           <View>
             <Button style={styles.btn2} onPress={handleSubmit}>
               Create Event
