@@ -9,7 +9,7 @@ import CreateEventModal from "../Event/CreateEventModal";
 const StackNavigation = () => {
   const { Navigator, Screen } = createStackNavigator();
   return (
-    <Navigator initialRouteName="signup">
+    <Navigator initialRouteName="create">
       <Screen
         name="signup"
         component={SignUp}

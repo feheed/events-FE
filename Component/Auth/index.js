@@ -21,7 +21,7 @@ import { useNavigation } from "@react-navigation/native";
 const { width: WIDTH } = Dimensions.get("window");
 const SignIn = () => {
   const [user, setUser] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const handlesubmit = () => {
@@ -59,7 +59,7 @@ const SignIn = () => {
         <TextInput
           style={styles.input}
           placeholder={"Email"}
-          onChangeText={(value) => setUser({ ...user, username: value })}
+          onChangeText={(value) => setUser({ ...user, email: value })}
           underlineColorAndroid={"transparent"}
         />
       </View>
