@@ -21,7 +21,7 @@ const signUp = () => {
     password: "",
     firstname: "",
     lastname: "",
-    email: "",
+    username: "",
   });
 
   const handlesubmit = () => {
@@ -65,7 +65,7 @@ const signUp = () => {
         <TextInput
           style={styles.input}
           placeholder={"email"}
-          onChangeText={(value) => setUser({ ...user, email: value })}
+          onChangeText={(value) => setUser({ ...user, username: value })}
           underlineColorAndroid={"transparent"}
         />
       </View>
