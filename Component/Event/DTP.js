@@ -1,9 +1,9 @@
 import React, { Component, useState } from "react";
-import { View, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, TextInput, Dimensions } from "react-native";
 import DatePicker from "react-native-datepicker";
 import { TextInputMask } from "react-native-masked-text";
 import moment from "moment";
-
+const { width: WIDTH } = Dimensions.get("window");
 export default class DTP extends Component {
   constructor(props) {
     super(props);
@@ -51,13 +51,25 @@ export default class DTP extends Component {
           confirmBtnText="confirm"
           cancelBtnText="Cancel"
           customStyles={{
-            dateInput: {
+            input: {
+              width: WIDTH - 40,
+              height: 60,
+              borderRadius: 45,
+              borderColor: "white",
+              borderWidth: 1,
+              fontSize: 20,
+              fontWeight: "500",
+              paddingLeft: 45,
               backgroundColor: "white",
-              borderWidth: 3,
-              height: 50,
-              marginBottom: 30,
-
-              borderColor: "#35589A",
+              color: "black",
+              marginHorizontal: 25,
+              shadowColor: "#000000",
+              shadowOpacity: 0.5,
+              shadowRadius: 2,
+              shadowOffset: {
+                height: 1,
+                width: 1,
+              },
             },
           }}
           onDateChange={(date) => {

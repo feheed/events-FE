@@ -72,6 +72,7 @@ const signUp = () => {
       <View>
         <TextInput
           style={styles.input}
+          type={"password"}
           placeholder={"Password"}
           onChangeText={(value) => setUser({ ...user, password: value })}
           underlineColorAndroid={"transparent"}
